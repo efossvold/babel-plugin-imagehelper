@@ -1,0 +1,25 @@
+<svg viewBox="0 0 580 580" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <rect id="a" width="580" height="580" rx="290"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <mask id="b" fill="#fff">
+      <use xlink:href="#a"/>
+    </mask>
+    <use fill="#4E6F82" xlink:href="#a"/>
+    <rect fill="#D2DFE7" mask="url(#b)" transform="rotate(10 323 401.5)" x="173" y="167" width="300" height="469" rx="10"/>
+    <rect fill="#FFF" mask="url(#b)" x="140" y="143" width="300" height="469" rx="10"/>
+    <rect fill="#4E6F82" mask="url(#b)" x="180" y="430" width="220" height="10" rx="5"/>
+    <rect fill="#4E6F82" mask="url(#b)" x="180" y="458" width="207" height="6" rx="3"/>
+    <rect fill="#4E6F82" mask="url(#b)" x="180" y="474" width="214" height="6" rx="3"/>
+    <rect fill="#4E6F82" mask="url(#b)" x="180" y="490" width="209" height="6" rx="3"/>
+    <rect fill="#4E6F82" mask="url(#b)" x="180" y="506" width="194" height="6" rx="3"/>
+    <rect fill="#4E6F82" mask="url(#b)" x="180" y="522" width="207" height="6" rx="3"/>
+    <text mask="url(#b)" font-family="Nunito-Black, Nunito" font-size="144" font-weight="700" fill="#FF3973">
+      <tspan x="160" y="349">404</tspan>
+    </text>
+    <text mask="url(#b)" font-family="OpenSans-Semibold, Open Sans" font-size="18" font-weight="500" fill="#4E6F82">
+      <tspan x="160" y="227">REPORT</tspan>
+    </text>
+  </g>
+</svg>

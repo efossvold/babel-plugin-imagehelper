@@ -1,0 +1,10 @@
+__tests__
+.eslintrc.yml
+.fnmrc
+.git
+.gitignore
+.npmignore
+example.js
+img
+run.js
+yarn.lock
