@@ -19,12 +19,13 @@
   },
   "homepage": "https://github.com/efossvold/babel-plugin-imagehelper#readme",
   "scripts": {
-    "test": "node_modules/.bin/jest",
-    "test-u": "node_modules/.bin/jest -u"
+    "test": "jest"
   },
   "dependencies": {
+    "file-base64": "^1.0.0",
     "glob-fs": "^0.1.7",
-    "image-size": "^0.6.2"
+    "image-size": "^0.6.2",
+    "md5-file": "^4.0.0"
   },
   "devDependencies": {
     "@babel/cli": "7.0.0-beta.47",
