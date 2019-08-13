@@ -20,7 +20,7 @@ module.exports = function(babel) {
 
         const limit = state.opts.limit || 10000 // Byte limit to inline files as Data URL
         const hashLength = state.opts.hashLength || 8
-        const imgDir = nodePath.join('.', state.opts.path)
+        const imgDir = state.opts.path
         let files = glob.sync(nodePath.join(imgDir, '**/*.{jpg,jpeg,png,gif,svg}'))
 
         const nodes = files.map(imgPath => {
