@@ -1,6 +1,6 @@
 __tests__
 .eslintrc.yml
-.fnmrc
+.nvmrc
 .git
 .gitignore
 .npmignore
