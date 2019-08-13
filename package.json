@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-imagehelper",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Load image information (width, height, aspectRatio, path) into an assocative array for use in your app.",
   "main": "index.js",
   "repository": {

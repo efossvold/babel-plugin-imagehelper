@@ -1,6 +1,6 @@
 const nodePath = require('path')
 const fs = require('fs')
-const glob = require('glob-fs')()
+const glob = require('glob')
 const imageSize = require('image-size')
 const pluginName = 'babel-plugin-image-size'
 const crypto = require('crypto')
@@ -21,10 +21,7 @@ module.exports = function(babel) {
         const limit = state.opts.limit || 10000 // Byte limit to inline files as Data URL
         const hashLength = state.opts.hashLength || 8
         const imgDir = nodePath.join('.', state.opts.path)
-        let files = glob.readdirSync(nodePath.join(imgDir, '**/*.{jpg,jpeg,png,gif,svg}'))
-
-        // For some reason glob sometimes duplicates all file entries. Remove them with Set.
-        files = Array.from(new Set(files))
+        let files = glob.sync(nodePath.join(imgDir, '**/*.{jpg,jpeg,png,gif,svg}'))
 
         const nodes = files.map(imgPath => {
           let dimensions
