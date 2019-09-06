@@ -1,6 +1,6 @@
 const nodePath = require('path')
 const fs = require('fs')
-const glob = require('glob')
+const glob = require('fast-glob')
 const imageSize = require('image-size')
 const pluginName = 'babel-plugin-image-size'
 const crypto = require('crypto')
@@ -8,14 +8,14 @@ const crypto = require('crypto')
 const md5File = (content) => {
   const hash = crypto.createHash('md5')
   hash.update(content)
-  return hash.digest('hex')
+  return hash.digest('hex', content)
 }
 
 const IMG_PROPS = ['src', 'absPath', 'ext', 'width', 'widthPx', 'height', 'heightPx', 'aspectRatio', 'hash', 'data']
 
 module.exports = function(babel) {
   const t = babel.types
-  let x = 1
+
   return {
     visitor: {
       StringLiteral: function StringLiteral(path, state) {
@@ -28,21 +28,17 @@ module.exports = function(babel) {
 
         imgProps.forEach(prop => {
           if (!IMG_PROPS.includes(prop)) {
-            throw(`Property '${prop}' is invalid. Valid properties are ${IMG_PROPS.join(', ')}`)
+            throw new Error(`Property '${prop}' is invalid. Valid properties are ${IMG_PROPS.join(', ')}`)
           }
         })
 
-        console.log({
-          imgDir
-        })
-
-        let files = glob.sync(nodePath.join(imgDir, '**/*.{jpg,jpeg,png,gif,svg}'))
+        const files = glob.sync(nodePath.join(imgDir, '**/*.{jpg,jpeg,png,gif,svg}'))
 
         const nodes = files.map(imgPath => {
           let dimensions
 
           try {
-            dimensions = imageSize(imgPath)
+            dimensions = imageSize(imgPath, null)
           } catch(e) {
             console.log(`${pluginName}: ${e} (${imgPath})`)
             return
@@ -54,16 +50,6 @@ module.exports = function(babel) {
           const stats = fs.statSync(imgPath)
           let md5sum = md5File(imgData)
           md5sum = md5sum.substr(md5sum.length - hashLength, hashLength)
-
-          if (x == 1) {
-            console.log({
-              key,
-              imgDir,
-              imgPath,
-              imgHTTPPath,
-            })
-            x = 2
-          }
 
           const properties = []
 

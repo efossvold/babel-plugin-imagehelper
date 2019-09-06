@@ -1,6 +1,7 @@
 ---
-# extends:
-  # - airbnb
+extends:
+  - eslint
+  - airbnb-base
 
 parser: babel-eslint
 
