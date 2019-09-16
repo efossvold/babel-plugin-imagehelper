@@ -1,5 +1,6 @@
 .fnmrc
 .idea
+.history
 node_modules
 **/node_modules/
 yarn.lock

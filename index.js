@@ -5,11 +5,7 @@ const imageSize = require('image-size')
 const pluginName = 'babel-plugin-image-size'
 const crypto = require('crypto')
 
-const md5File = (content) => {
-  const hash = crypto.createHash('md5')
-  hash.update(content)
-  return hash.digest('hex', content)
-}
+const md5File = (content) => crypto.createHash('md5').update(content).digest('hex')
 
 const IMG_PROPS = ['src', 'absPath', 'ext', 'width', 'widthPx', 'height', 'heightPx', 'aspectRatio', 'hash', 'data']
 

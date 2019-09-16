@@ -1,4 +1,6 @@
 __tests__
+.idea
+.history
 .eslintrc.yml
 .nvmrc
 .git
