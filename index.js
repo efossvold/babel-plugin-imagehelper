@@ -1,6 +1,6 @@
 const nodePath = require('path')
 const fs = require('fs')
-const glob = require('fast-glob')
+const glob = require('tiny-glob/sync')
 const imageSize = require('image-size')
 const pluginName = 'babel-plugin-image-size'
 const crypto = require('crypto')
@@ -28,7 +28,10 @@ module.exports = function(babel) {
           }
         })
 
-        const files = glob.sync(nodePath.join(imgDir, '**/*.{jpg,jpeg,png,gif,svg}'))
+        const files = glob(nodePath.join('**/*.{jpg,jpeg,png,gif,svg}'), {
+          cwd: imgDir,
+          absolute: true,
+        })
 
         const nodes = files.map(imgPath => {
           let dimensions
