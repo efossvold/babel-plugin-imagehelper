@@ -7,20 +7,9 @@ parser: babel-eslint
 
 plugins:
   - import
-  - class-property
 
 env:
-  browser: true
   node: true
-
-# settings:
-#   import/resolver: babel-module
-
-# globals:
-#   STATIC_URL: true
-#   IMAGES_URL: true
-#   FB_APP_ID: true
-#   FB_APP_SECRET: true
 
 rules:
   arrow-parens: 0
@@ -73,37 +62,8 @@ rules:
   import/prefer-default-export: 0
 
   # eslint-plugin-import
-  import/no-unresolved: [2, {commonjs: true, amd: true, ignore: ['components', 'routes', 'styles', 'constants', 'helpers', 'utils', 'config', 'store', 'firebase', 'tests', 'text']}]
+  import/no-unresolved: [2, { commonjs: true, amd: true, ignore: [] }]
   import/named: 2
   import/namespace: 2
   import/default: 2
   import/export: 2
-
-  # react
-  # react/react-in-jsx-scope: 0
-  # react/require-extension: 0
-  # react/no-multi-comp: 1
-  # react/prop-types: [1, {ignore: ['className']}]
-  # react/sort-comp: 0
-  # react/no-array-index-key: 1
-  # react/require-default-props: 0
-  # react/forbid-prop-types: 0
-  # react/no-find-dom-node: 0
-
-  # # react/jsx
-  # react/jsx-first-prop-new-line: 0
-  # react/jsx-max-props-per-line: 0
-  # react/jsx-closing-bracket-location: 1
-  # react/jsx-indent-props:
-  #   - 1
-  #   - 2
-  # react/jsx-indent:
-  #   - 1
-  #   - 2
-  # react/jsx-filename-extension: 0
-  # # Complains about emotion css tags on elements (could be a bug)
-  # react/jsx-curly-brace-presence: 0
-  #
-  # # jsx-a11y
-  # jsx-a11y/no-static-element-interactions: 0
-  # jsx-a11y/anchor-is-valid: 0
