@@ -13,7 +13,7 @@
     "image"
   ],
   "author": "Erik Fossvold",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/efossvold/babel-plugin-imagehelper/issues"
   },
