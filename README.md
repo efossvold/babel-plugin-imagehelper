@@ -3,11 +3,13 @@
 Load image information (width, height, aspectRatio and path) into variable so that all the information is accessible to your app.
 
 # Installation
+
 `$ npm install babel-plugin-imagehelper`
 
 # Usage
 
 Add the plugin to .babelrc. Specify the path to the image directory with `path` in options.
+
 ```
 ["babel-plugin-imagehelper", {
   path: path.join(__dirname, '/img'),
@@ -21,18 +23,21 @@ Add the plugin to .babelrc. Specify the path to the image directory with `path` 
 In the source code any variable with the string value `__babelPluginImageHelper__` will be replace with an associative array with information about the images in the directory your specified for the plugin in .babelrc.
 
 # Options
-* **path**: (required) Path to directory with images
-* **httpPath**: HTTP path to the image for the src attribute in HTML img tag
-* **limit**: Byte limit to inline files as Data URL (inspired by webpack url-loader). Set to 0 to disable.
-* **hashLength**: md5sum length for cache busting
-* **props**: Selects which properties that will be included for each image. If omitted, all the properties will be included.
+
+- **path**: (required) Path to directory with images
+- **httpPath**: HTTP path to the image for the src attribute in HTML img tag
+- **limit**: Byte limit to inline files as Data URL (inspired by webpack url-loader). Set to 0 to disable.
+- **hashLength**: md5sum length for cache busting
+- **props**: Selects which properties that will be included for each image. If omitted, all the properties will be included.
 
 # Example
+
 Say you have 4 image files in the `./static/i` directory:
-* img1.jpg
-* img2.png
-* img3.svg
-* subdir/img.jpg
+
+- img1.jpg
+- img2.png
+- img3.svg
+- subdir/img.jpg
 
 And a file in your source code named `images.js`:
 
@@ -43,6 +48,7 @@ export const images = '__babelPluginImageHelper__'
 ```
 
 Using the plugin `images.js` becomes:
+
 ```
 // images.js
 export default {

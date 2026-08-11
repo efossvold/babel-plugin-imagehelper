@@ -1,50 +1,45 @@
 {
   "name": "babel-plugin-imagehelper",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Load image information (width, height, aspectRatio, path) into an assocative array for use in your app.",
-  "main": "index.js",
+  "keywords": [
+    "babel",
+    "image",
+    "plugin"
+  ],
+  "homepage": "https://github.com/efossvold/babel-plugin-imagehelper#readme",
+  "bugs": {
+    "url": "https://github.com/efossvold/babel-plugin-imagehelper/issues"
+  },
+  "license": "MIT",
+  "author": "Erik Fossvold",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/efossvold/babel-plugin-imagehelper.git"
   },
-  "keywords": [
-    "babel",
-    "plugin",
-    "image"
-  ],
-  "author": "Erik Fossvold",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/efossvold/babel-plugin-imagehelper/issues"
-  },
-  "homepage": "https://github.com/efossvold/babel-plugin-imagehelper#readme",
+  "main": "index.js",
   "scripts": {
     "publish": "npm publish",
+    "lint": "oxlint",
     "test": "jest",
     "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "image-size-next": "^2.1.0",
+    "tiny-glob": "^0.2.9"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.29.7",
+    "@babel/core": "^7.29.7",
+    "@babel/preset-env": "^7.29.7",
+    "babel-plugin-tester": "^10.1.0",
+    "oxfmt": "^0.63.0",
+    "oxlint": "^1.78.0"
   },
   "jest": {
     "testEnvironment": "node",
     "testPathIgnorePatterns": [
-      "node_modules",
-      ".history"
+      "node_modules"
     ]
-  },
-  "dependencies": {
-    "image-size": "^1.0.0",
-    "tiny-glob": "^0.2.9"
-  },
-  "devDependencies": {
-    "@babel/cli": "7.15.7",
-    "@babel/core": "7.15.5",
-    "@babel/preset-env": "^7.15.6",
-    "babel-eslint": "^10.0.3",
-    "babel-plugin-tester": "^10.1.0",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-eslint": "^7.0.0",
-    "eslint-plugin-import": "^2.24.2",
-    "eslint-plugin-node": "^11.1.0",
-    "jest": "^27.2.2"
   }
 }

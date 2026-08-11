@@ -6,15 +6,22 @@ const plugin = require('./index.js')
 
 const fileName = process.argv[2] || 'example.js'
 
-if (!fs.existsSync(fileName)) throw Error(`File '${fileName}' not found`)
+if (!fs.existsSync(fileName)) {
+  throw new Error(`File '${fileName}' not found`)
+}
 
 const out = babel.transformFileSync(fileName, {
-  plugins: [[plugin, {
-    path: path.join(__dirname, '/img'),
-    httpPath: '/static',
-    // props: ['httpPath', 'width', 'height', 'hash'],
-  }]],
-  babelrc: false // So we don't get babelrc from whole project
+  plugins: [
+    [
+      plugin,
+      {
+        path: path.join(__dirname, '/img'),
+        httpPath: '/static',
+        // props: ['httpPath', 'width', 'height', 'hash'],
+      },
+    ],
+  ],
+  babelrc: false, // So we don't get babelrc from whole project
 }).code
 
 console.log(out)

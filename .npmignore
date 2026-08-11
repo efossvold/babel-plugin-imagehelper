@@ -1,13 +1,10 @@
 __tests__
-.idea
-.history
-.eslintrc.yml
-.nvmrc
 .git
 .gitignore
 .npmignore
+bun.lock
 example.js
 img
+mise.toml
+ox*.config.ts
 run.js
-yarn.lock
-yarn-error.log
